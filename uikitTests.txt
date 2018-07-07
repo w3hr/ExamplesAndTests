@@ -1,0 +1,5 @@
+            $scope.RemoveId_OnClick = function (id) {
+                UIkit.modal.confirm('Are you sure to remove Step <strong>' + id + '</strong> ?').then(function () {
+                    $scope.RemoveId(id);
+                }, function () { });
+            }
