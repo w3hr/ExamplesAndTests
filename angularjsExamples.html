@@ -1,0 +1,38 @@
+
+	
+	//Simple App + Controller creation
+	
+	<div ng-app="myApp" ng-controller="myController">
+	{{foo}}
+	</div>
+
+
+	<script>
+		var app = angular.module('myApp', []);
+
+		app.controller('myController', function ($scope) {
+			$scope.foo = 'bar';
+		}
+	
+		//Simple Watch
+		$scope.$watch('foobar', function() {
+			console.warn('foobar has changed!');
+		});
+		
+		
+		//angular forEach
+		
+		$scope.SearchFoo = (foo) => {
+			let found = null;
+			angular.forEach($scope.list, function (value, key) {
+				if (key === foo)
+					found = value;
+			});
+			
+			if (found !== null)
+				console.log('found foo: ' + found);
+			else
+				console.warn('didnt found foo :( !');
+		}		
+		
+	</script>	
